@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import houseSrc from './images/house.png';
 import lightingSrc from './images/lighting.png';
@@ -31,10 +30,10 @@ let lightSwitchCSS = {
 
 class LightSwitch extends React.Component {
   render() {
-    console.log('alexmark2:' + this.props.lightOn)
     return (
       <img
         src={this.props.lightOn ? lightSwitchOnSrc : lightSwitchOffSrc}
+        alt="LightSwitch"
         style={lightSwitchCSS} 
         onClick={() => this.props.handleClick(!this.props.lightOn)}/>
       );
@@ -48,7 +47,6 @@ class House extends React.Component {
   }
 
   render() {
-    console.log('alexmark this.props.lightOn:' + this.props.lightOn);
     return (
       <span>
         <img src={houseSrc} alt="house" style={{width: "500px", zPosition: "2"}} />
